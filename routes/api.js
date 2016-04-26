@@ -4,6 +4,8 @@ var router = express.Router();
 var employees = require('../controllers/employees.js');
 var departments = require('../controllers/departments.js');
 
+router.get('/employees/getByPageNumber/:pageNumber', employees.getByPageNumber);
+router.get('/employees/getPagesCount', employees.getPagesCount);
 router.get('/employees/getAll', employees.getAll);
 router.get('/employees/getOne/:empID', employees.getOne);
 router.post('/employees/insert', employees.insert);

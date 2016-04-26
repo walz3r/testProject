@@ -25,6 +25,7 @@ module.exports = function(cb) {
 
         connection = db;
         db.settings.set('instance.returnAllErrors', true);
+        db.settings.set("properties.association_key", "{field}");
         db.settings.set("connection.reconnect", true);
         db.settings.set("connection.pool", true);
 

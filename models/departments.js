@@ -9,10 +9,11 @@ module.exports = function(orm, db) {
         }
 
     }, {
-        autoFetch: true,
+        id: "dpID",
         methods: {},
         validations: {},
         hooks: {
         }
     });
+
 };

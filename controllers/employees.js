@@ -1,4 +1,38 @@
 module.exports = {
+	getPagesCount : function(req, res, next)
+	{
+		var Employees = req.models.tblemployees;
+
+		Employees.count({}, function(err, count){
+			if (err) {
+				return next(err);
+			} else {
+				var pagesCount = Math.ceil(count / 7);
+				return res.send({ 
+					pages : pagesCount
+				});
+			}
+		});
+	},
+	getByPageNumber: function(req, res, next)
+	{
+		var Employees = req.models.tblemployees;
+
+		//How many records show on the view
+		var recordsPerPage = 7;
+
+
+		var pageNumber = req.params.pageNumber || 1;
+		var skipRecordsCount = --pageNumber * recordsPerPage;
+	
+		Employees.find({}, recordsPerPage, { offset: skipRecordsCount }, function(err, employees){
+			if (err) {
+				return next(err);
+			} else {
+				return res.send(employees);
+			}
+		});
+	},
 	getAll : function(req, res, next)
 	{
 		var Employees = req.models.tblemployees;

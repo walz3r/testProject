@@ -1,0 +1,21 @@
+  <div data-ng-controller="mainCtrl">
+    <table class="table table-striped"> 
+      <thead> <tr> <th>ID</th> <th>Name</th> <th>Active</th> <th>Department</th> </tr> 
+      </thead> 
+      <tbody>
+       <tr  ng-repeat="employee in employees" >
+        <th scope="row" >{{ employee.empID }}</th>
+         <td>{{ employee.empName }}</td>
+         <td>{{ employee.empActive }}</td> 
+         <td>{{ employee.emp_dpID }}</td> 
+        </tr> 
+      </tbody> 
+      </table>  
+      <nav>
+      <nav>
+    <ul class="pagination">
+    <li ng-repeat="page in pages"><a href="#/employees/{{ page }}">{{ page }}</a></li>
+    </ul>
+</nav>        
+</nav>
+  </div>

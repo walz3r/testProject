@@ -3,14 +3,20 @@
   <head>
     <link rel="stylesheet" href="/stylesheets/themes/default/bootstrap.min.css">
     <link rel='stylesheet' href='/stylesheets/themes/default/style.css' />
-    <script type='text/javascript' src= "../javascripts/lib/bootstrap.min.js"></script>
     <script type='text/javascript' src= "../javascripts/lib/angular.min.js"></script>
+    <script type='text/javascript' src= "../javascripts/lib/angular-route.min.js"></script>
     <script type='text/javascript' src= "../javascripts/modules/mainModule.js"></script>
+    <script type='text/javascript' src= "../javascripts/services/departments.services.js"></script>
+    <script type='text/javascript' src= "../javascripts/services/employees.services.js"></script>
     <script type='text/javascript' src= "../javascripts/controllers/mainCtrl.js"></script>
+    <script type='text/javascript' src= "../javascripts/controllers/departmentsCtrl.js"></script>
   </head>
   <body data-ng-app="testApp">
-  <div data-ng-controller="mainCtrl">
-    <h1 data-ng-bind="hello"></h1>
-  </div>
+      <h1>Test project</h1>
+      <ul class="nav nav-pills">
+        <li role="presentation"><a href="#/">Home</a></li>
+        <li role="presentation"><a href="#/departments">Departments</a></li>
+      </ul>
+      <div data-ng-view></div>
   </body>
 </html>

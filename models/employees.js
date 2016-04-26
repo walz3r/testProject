@@ -11,14 +11,14 @@ module.exports = function(orm, db) {
         	type: 'boolean'
         },
         emp_dpID: {
-        	type: 'integer'
+            type: 'integer'
         }
 
     }, {
-        autoFetch: true,
         methods: {},
         validations: {},
         hooks: {
         }
     });
+
 };
